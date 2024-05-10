@@ -1,3 +1,4 @@
+"use client"
 import { ITask } from "../types/task";
 import React from "react";
 import Task from "./Task";

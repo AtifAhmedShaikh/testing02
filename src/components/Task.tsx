@@ -35,6 +35,7 @@ const Task: React.FC<TaskProps> = ({ task }) => {
       id: task.id,
       username: taskToEdit,
     });
+    setOpenModalEdit(false);
   };
   const handleDeleteTask = async (id: string) => {
     await deleteTodo(id);
@@ -46,13 +47,6 @@ const Task: React.FC<TaskProps> = ({ task }) => {
     setOpenModalClone(false);
     router.refresh();
   };
-
-  // const handleCloneTask = async (username: string) => {
-  //   await cloneTodo(username);
-  //   //await cloneTodo(todo);
-  //   setOpenModalClone(false);
-  //   router.refresh();
-  // };
 
   return (
     <tr key={task.id}>
@@ -104,7 +98,6 @@ const Task: React.FC<TaskProps> = ({ task }) => {
       </td>
       <td>
         <LiaCloneSolid
-          //  onClick={() => setOpenModalDeleted(true)}
           onClick={() => setOpenModalClone(true)}
           cursor="pointer"
           className="text-green-500"
