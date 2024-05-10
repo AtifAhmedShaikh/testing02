@@ -7,7 +7,7 @@ const connectDB = async (): Promise<void> => {
     }
 
     try {
-        await mongoose.connect("mongodb+srv://atifahmedshaikh:atifahmed19@cluster0.malln0y.mongodb.net/expense?retryWrites=true&w=majority&appName=Cluster0");
+        await mongoose.connect(process.env.DATABASE_URI!);
         console.log("MongoDB connected.");
     } catch (error: any) {
         console.error("Error connecting to MongoDB:", error?.message);
